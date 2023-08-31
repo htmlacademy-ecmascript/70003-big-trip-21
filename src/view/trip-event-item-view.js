@@ -1,8 +1,12 @@
 import { createElement } from '../render.js';
 import { createTripEventItem } from '../templates/trip-event-item-template.js';
 export default class TripEventItem {
+  constructor({ point }) {
+    this.point = point;
+  }
+
   getTemplate() {
-    return createTripEventItem();
+    return createTripEventItem({pointData: this.point});
   }
 
   getElement() {
